@@ -11,7 +11,7 @@ def webhook():
         data = request.get_json()
         API_KEY = data['entry'][0]['messaging'][0]['message'] #Key for Verify 
         hubverify = 'wadev12345'
-        hubverify1 = 'wadev12345'
+      
        
         
         if hubverify == API_KEY : # Check data verify and mode
