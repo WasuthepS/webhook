@@ -11,11 +11,11 @@ def webhook():
         hubverify = request.args.get('hub.verify_token') # Get Verify Key tokem
         hubchallenge = request.args.get('hub.challenge') # For return to Facebook must to 'CHALLENGE_ACCEPTED'
         hubmode = request.args.get('hub.mode') # Mode must to 'subscribe'
-        
+
         if hubverify == VERIFY_TOKEN and hubmode == "subscribe": # Check data verify and mode
             print('WEBHOOK_VERIFIED')
             return hubchallenge , 200 # Return 'CHALLENGE_ACCEPTED'
-        
+
         else:
             return 'You Wrong Something' , 200
 
