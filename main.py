@@ -22,7 +22,7 @@ def webhook():
     elif request.method == 'POST':
         data = request.get_json()
 
-        if data['object'] == "page":
+        if data['object'] == ["page","user"]:
             #print(data['entry'][0]['messaging'][0]['message'])
             print(data['entry'])
 
