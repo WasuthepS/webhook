@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['GET','POST'])
 def webhook():
     if request.method == 'GET':
-        VERIFY_TOKEN = "6C1FD59D73DEC656428B1C9D9AD81" # Key for Verify Token
+        VERIFY_TOKEN = "ga75HpoblY9qBtOKo2m8QXauNvBoKQzt" # Key for Verify Token
         hubverify = request.args.get('hub.verify_token') # Get Verify Key tokem
         hubchallenge = request.args.get('hub.challenge') # For return to Facebook must to 'CHALLENGE_ACCEPTED'
         hubmode = request.args.get('hub.mode') # Mode must to 'subscribe'
@@ -28,7 +28,7 @@ def webhook():
 
         return 'EVENT_RECEIVED' , 200
 
-        if hubverify == "bh32q63v2k" and hubmode == "subscribe": # Check data verify and mode
+        if hubverify == "VERIFY_TOKEN" and hubmode == "subscribe": # Check data verify and mode
             return hubchallenge , 200 # Return 'CHALLENGE_ACCEPTED'
 
     elif request.method == 'GET':
